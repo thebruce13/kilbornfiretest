@@ -1,0 +1,136 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: New Site
+description: >- # this means to ignore newlines until "baseurl:"
+ This is the description to the whole site.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://kilbourn.test" # the base hostname & protocol for your site, e.g. http://example.com
+logo: img/logo.png
+
+#Collections
+collections:
+ slideshows:
+ prevention:
+  output: true
+  permalink: /prevention/:path/
+
+#Plugins
+plugins:
+  - jekyll-menus
+  - jekyll-sitemap
+  - mini_magick
+  - image_optim
+  - image_optim_pack
+
+#Permalink
+permalink: pretty
+
+# Build settings
+markdown: kramdown
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+   - node_modules
+   - gulpfile.js
+   - package.json
+   - package-lock.json
+   - Gemfile
+   - Gemfile.lock
+
+# Set presets for image-tag plugin
+image:
+  output: generated
+  presets:
+    large_slider:
+      width: 1800
+      height: 745
+    medium_slider:
+      width: 1800
+      height: 400
+    thumbnail:
+      width: 370
+      height: 215
+
+# Set filename for the jekyll-sitemap plugin.
+sitemap:
+  filename: "/sitemap.xml"
+
+# The domain for your local project
+# PROXY: "localhost"
+
+# Your project's server will run on PROXY:xxxx at this port
+# PORT: 4000
+
+# Autoprefixer will make sure your CSS works with these browsers
+COMPATIBILITY:
+  - "last 2 versions"
+  - "ie >= 9"
+  - "ios >= 7"
+
+# Gulp will reference these paths when it copies files
+PATHS:
+  # Paths to Sass libraries, which can then be loaded with @import
+  sass:
+    - "node_modules/foundation-sites/scss"
+    - "node_modules/motion-ui/src"
+    - "node_modules/slick-carousel/slick"
+    - "src/scss"
+    
+    # Pikaday CSS
+    - "node_modules/pikaday-responsive/dist"
+    - "node_modules/pikaday/scss"
+
+  # Paths to JavaScript libraries, which are combined into one file
+  javascript:
+    # Libraries requried by Foundation
+    - "node_modules/what-input/dist/what-input.js"
+
+    # JS Plugins
+    - "node_modules/lazysizes/lazysizes.min.js"
+
+    # Core Foundation files
+    - "node_modules/foundation-sites/dist/js/plugins/foundation.core.js"
+    - "node_modules/foundation-sites/dist/js/plugins/foundation.util.*.js"
+
+    # Individual Foundation components
+    # If you aren't using a component, just remove it from the list
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.abide.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.accordion.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.accordionMenu.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.drilldown.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.dropdown.js"
+    - "node_modules/foundation-sites/dist/js/plugins/foundation.dropdownMenu.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.equalizer.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.interchange.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.magellan.js"
+    - "node_modules/foundation-sites/dist/js/plugins/foundation.offcanvas.js"
+    - "node_modules/foundation-sites/dist/js/plugins/foundation.orbit.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.responsiveAccordionTabs.js"
+    - "node_modules/foundation-sites/dist/js/plugins/foundation.responsiveMenu.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.responsiveToggle.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.reveal.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.slider.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.smoothScroll.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.sticky.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.tabs.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.toggler.js"
+#    - "node_modules/foundation-sites/dist/js/plugins/foundation.tooltip.js"
+
+    # Paths to your own project code are here
+    - "assets/_js/!(app).js"
+    - "assets/_js/app.js"

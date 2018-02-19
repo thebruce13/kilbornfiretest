@@ -1,0 +1,23 @@
+{% comment %} MOBILE NAV {% endcomment %}
+<nav class="nav-main" role="navigation">
+    <ul class="vertical menu">
+        {% for item in include.menu %}
+            <li>
+                <a href="{{ item.url }}" {% if item.url == page.url %}class="active"{% endif %}>
+                    {{ item.title }}
+                </a>
+
+                {% comment %} CHILD MENU ITEMS {% endcomment %}
+                {% if item.children %}
+                    <ul class="menu">
+                        {% for child in item.children %}
+                            <li>
+                                <a href="{{ child.url }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

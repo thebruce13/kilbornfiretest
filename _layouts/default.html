@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" class="no-js">
+    <head>
+        {% include header.html %}
+    </head> 
+
+    <body>
+        {% comment %} SVG SPRITE {% endcomment %}
+        <div class="hide">{% include svg/svg.svg %}</div>
+
+        <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
+            {% include navigation/nav-off-canvas.html menu=site.menus.header %}
+        </div>
+
+        <div class="off-canvas-content" data-off-canvas-content>
+            {% comment %} TITLE BAR {% endcomment %}
+            <div class="title-bar fixed hide-for-large" data-hide-for="large" data-open="offCanvas">
+                <div class="grid-x">
+                    <div class="medium-12 cell text-right">
+                        <div class="title-bar-title text-upper">Menu</div>
+                        <button class="menu-icon" type="button" data-open="offCanvas"></button>
+                    </div>
+                </div>
+            </div>
+
+            {% comment %} MAIN NAV {% endcomment %}
+            <header class="header">
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="medium-3 cell header-logo show-for-large">
+                        <img src="{{ site.logo }}" alt="Kilbourn Fire Dept. Logo">
+                    </div>
+                    <div class="medium-9 cell text-upper">
+                        {% include navigation/nav-main.html menu=site.menus.header %}
+                    </div>
+                </div>
+            </div>
+            </header>
+
+            {% comment %} SLIDESHOW {% endcomment %}
+            <section class="hero">
+                {% include partials/slider.html %}
+            </section>
+
+            {% comment %} MAIN CONTENT {% endcomment %}
+            <div class="content">
+                {{ content }}
+            </div>
+
+            {% comment %} FOOTER {% endcomment %}
+            {% include footer.html %}
+        </div>
+
+        {% comment %} SCRIPTS AND SCHEMA {% endcomment %}
+        {% include scripts.html %}
+        {% include schema.html %}
+    </body>
+</html>

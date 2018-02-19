@@ -1,0 +1,28 @@
+/// Helper to get padding-bottom percentage for intrinsic ration based
+/// on a width & height.
+/// @link https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+/// @param {Length} $width
+/// @param {Length} $height
+@mixin intrinsic-ratio( $width, $height ) {
+  padding-bottom: ( $height / $width ) * 100%;
+}
+
+// Helper mixin to assign the Open Sans font when webfonts are loaded.
+@mixin opensans() {
+  .wf-active &,
+  .mce-content-body & {
+    font-family: 'Open Sans', $body-font-family;
+  }
+}
+
+// Rajdhani
+@mixin rajdhani(){
+  font-family: $header-font-family;
+  letter-spacing: 0.5px;
+
+  .wf-active &{
+    letter-spacing: 0;
+    font-weight: 700;
+    font-family: 'Rajdhani', $header-font-family;
+  }
+}

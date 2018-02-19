@@ -1,0 +1,55 @@
+{% comment %}
+    Slider size is determined based on if it is the homepage or not.
+{% endcomment %}
+{% if page.url == "/" %}
+    {% assign slider_size = 'large_slider' %}
+{% else %}
+    {% assign slider_size = 'medium_slider' %}
+{% endif %}
+
+{% comment %} GET THE SLIDER FOR THIS PAGE {% endcomment %}
+{% assign slider = site.slideshows | where: "path", page.slider | first %}
+
+{% if slider %}
+    <div class="slide-wrapper">
+        <div class="orbit intrinsic {{ slider_size }} {{ classes }}"
+                role="region"
+                data-orbit
+                data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;"
+                data-auto-play="false"
+                data-swipe="true">
+            <ul class="orbit-container {{ classes }}">  
+                {% comment %} PREV & NEXT BUTTONS {% endcomment %}
+                {% if item.slides.size > 1 %}
+                    <button class="orbit-previous" aria-label="Previous slide">
+                        <svg class="icon">
+                            <use xlink:href="#angle-left"></use>
+                        </svg>
+                    </button>
+    
+                    <button class="orbit-next" aria-label="Next slide">
+                        <svg class="icon">
+                            <use xlink:href="#angle-right"></use>
+                        </svg>
+                    </button>
+                {% endif %}
+
+                {% comment %} SLIDE IMAGES {% endcomment %}
+                {% for image in slider.slides %}
+                    {% if forLoop.first %}
+                        <li class="is-active orbit-slide {{ classes }}" style="background-image: url({% image {{ slider_size }} {{ image }} %}); background-size: cover; background-position: center, center;">
+                            <noscript><img src="{% image {{ slider_size }} {{ image }} %}"></noscript>
+                    {% else %}
+                        <li class="orbit-slide {{ classes }}">   
+                    {% endif %}
+                        {% comment %}
+                            - To get height ratio right: height = slider height( max slider height new slider height
+                            - ToDo: Set this up to have src-set 
+                        {% endcomment %}
+                        <img class="lazyload blur-up" data-src="{% image {{ slider_size }} {{ image }} %}"> 
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>    
+    </div>
+{% endif %}

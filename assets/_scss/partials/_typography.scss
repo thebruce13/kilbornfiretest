@@ -1,0 +1,34 @@
+// ---------------------------------------
+//  General helper classes
+// ---------------------------------------
+body {
+  @include opensans;
+}
+
+a {
+  transition: color .2s ease;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+.heading {
+  @include rajdhani;
+}
+
+.background-dark-gray {
+    background-color: $dark-gray;
+}
+
+.rajdhani{
+  @include rajdhani;
+}

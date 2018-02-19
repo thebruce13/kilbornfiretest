@@ -1,0 +1,61 @@
+--- 
+layout: default 
+---
+<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+    <div class="background-dark-gray section-padding">
+        <section class="grid-container">
+            <h1 class="text-upper">{{ page.title }}</h1>
+            <h2 class="text-primary text-upper">{{ page.subtitle }}</h2>
+            <div>
+                {{ content }}
+            </div>
+        </section>
+    </div>
+    <section class="companies-wrapper section-padding">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                {% for i in page.companies %}
+                <div class="medium-4 cell text-center">
+                        <!--<svg class="icon-{{ i[1].icon }}">
+                            <use xlink:href="#{{ i[1].icon }}"></use>
+                        </svg>-->
+                        <img src="{{site.url}}/img/{{ i[1].icon }}.png">
+                    <h3 class="rajdhani text-upper text-primary">{{ i[1].title }}</h3>
+                    <p>{{ i[1].description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- ISO RATING -->
+    <section class="section-padding iso-raiting-wrapper">
+        <div class="grid-container">
+            <h2 class="text-upper">{{ page.isoraiting.title }}</h2>
+            <h3 class="text-upper text-primary" style="font-weight:400"><i>{{ page.isoraiting.subtitle }}</i></h3>
+            <p>{{ page.isoraiting.content }}</p>
+        </div>
+    </section>
+    <section class="background-dark-gray section-padding">
+        <div class="grid-container">
+            {% assign preventions = site.prevention | sort: "featured" %}
+            {% for post in preventions %}
+            <div class="grid-x prevention-featured">
+                <div class="medium-4 cell">
+                    <img src="{% image thumbnail {{ post.image }} %}" alt="">
+                </div>
+                <div class="medium-8 cell">
+                    <h3 class="rajdhani text-upper">{{post.title}}</h3>
+                
+                  {% assign content_words = post.content | number_of_words %}
+                  {% assign excerpt_words = post.content | truncatewords: 75 | number_of_words %}
+                                    
+                  {{ post.content | truncatewords: 75 }}
+                  {% if content_words != excerpt_words %}
+                    <a href="{{site.baseurl}}{{ post.url }}">Read more</a>
+                  {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</article>

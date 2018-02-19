@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<div class="grid-container">
+    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+        <section>
+            <h1>{{ page.title }}</h1>
+            <div>
+                {{ content }}
+            </div>
+        </section>
+    </article>
+</div>
+
+<div class="grid-container">
+    {% comment %} ENFORMED CONTACT FORM {% endcomment %}
+    <form method="POST" action="https://www.enformed.io/e9uuwcns" class="grid-x grid-margin-x">
+        <label class="medium-6 cell">
+            First Name
+            <input type="text" name="first">
+        </label>
+
+        <label class="medium-6 cell">
+            Last Name
+            <input type="text" name="phone">
+        </label>
+
+        <label class="medium-6 cell">
+            Phone
+            <input type="text" name="phone">
+        </label>
+
+        <label class="medium-6 cell">
+            Email
+            <input type="email" name="email">
+        </label>
+
+        <label class="medium-12 cell">
+            Message
+            <textarea name="message"></textarea>
+        </label>
+        <div class="cell">
+            <button type="submit" class="button booking-link">Submit</button>
+        </div>
+
+        <input type="hidden" name="*reply" value="email">
+        <input type="hidden" name="*redirect" value="{{ page.url | absolute_url }}#form-submit" />
+        <input type="hidden" name="*subject" value="New Submission from Contact Us" />
+    </form>
+</div>

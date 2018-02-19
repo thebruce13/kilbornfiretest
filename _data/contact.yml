@@ -1,0 +1,19 @@
+---
+# Address, email, phone, and social links for contact information.
+Address:
+  street: ''
+  city: ''
+  state: ''
+  zip: ''
+phone: ''
+email: ''
+Social Media:
+  facebook: ''
+  twitter: ''
+  yelp: ''
+  youtube: ''
+  vimeo: ''
+  instagram: ''
+  trip_advisor: ''
+  pinterest: ''
+  google_plus: ''

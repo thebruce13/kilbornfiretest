@@ -1,0 +1,26 @@
+// ---------------------------------------
+//  Hero Orbit Slider
+// ---------------------------------------
+.hero {
+  background-color: $light-gray;
+}
+
+.orbit-next,
+.orbit-previous {
+  width: 75px;
+  transition: background-color .3s;
+
+  .icon {
+    width: 50px;
+    height: 50px;
+    fill: $white;
+    opacity: .45;
+    transition: opacity .3s;
+  }
+}
+
+.orbit:hover {
+  .icon {
+    opacity: .85;
+  }
+}

@@ -1,0 +1,58 @@
+<footer class="footer">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            {% if site.logo %}
+                <div class="medium-3 large-6 cell text-center">
+                    <a href="{{ site.link }}">
+                        <img src="{{ site.logo | absolute_url }}">
+                    </a>
+                </div>
+            {% endif %}
+
+            {% comment %} ADDRESS {% endcomment %}
+            <div class="medium-9 large-6 cell text-left">
+                {% if site.data.contact.Address.street != '' or site.data.contact.Address.city != '' or site.data.contact.Address.state != '' or site.data.contact.Address.state != '' or site.data.contact.Address.zip != ''%}
+                    <div class="contact-info">
+                        <svg class="icon map-marker">
+                            <use xlink:href="#map-marker"></use>
+                        </svg>
+
+                        <a class="text-black" href="http://maps.google.com/?q=Field's+Park+Motel+{{ (site.data.contact.Address.street ~ ' ' ~ site.data.contact.Address.city ~ ' ' ~ site.data.contact.Address.state ~ ' ' ~ site.data.contact.Address.zip) | url_encode }}"
+                            target="_blank">
+                            {{ site.data.contact.Address.street }} {{ site.data.contact.Address.city }}, {{ site.data.contact.Address.state }} {{ site.data.contact.Address.zip }}
+                        </a>
+                    </div>
+                {% endif %}
+
+                {% comment %} PHONE {% endcomment %}
+                {% if site.data.contact.phone != '' %}
+                    <div class="contact-info">
+                        <svg class="icon phone">
+                            <use xlink:href="#phone"></use>
+                        </svg>
+
+                        <a class="text-black" href="tel:{{ site.data.contact.phone }}">{{ site.data.contact.phone }}</a>
+                    </div>
+                {% endif %}
+                
+                {% comment %} SOCIAL MEDIA INCLDUE {% endcomment %}
+                {% include partials/social-media.html %}
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% comment %} BOTTOM FOOTER {% endcomment %}
+<div class="post-footer">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="medium-6 cell text-center medium-text-left">
+                &copy; {{site.title}} {{ 'now'| date: '%Y' }}
+            </div>
+            <div class="medium-6 cell text-center medium-text-right">
+                Designed and Developed by
+                <a href="http://www.ad-lit.com">Ad-Lit, Inc.</a>
+            </div>
+        </div>
+    </div>
+</div>

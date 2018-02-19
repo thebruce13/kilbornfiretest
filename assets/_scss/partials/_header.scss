@@ -1,0 +1,26 @@
+.header{
+    background: $black;
+    @include rajdhani;
+    font-size: 25px;
+}
+
+.header-logo{
+    position: relative;
+
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: $dark-gray;
+        padding: 0.4rem;
+    }
+}
+
+.header a{
+    color: $white;
+
+    &:hover{
+        color: $primary-color;
+    }
+}

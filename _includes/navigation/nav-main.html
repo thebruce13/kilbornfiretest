@@ -1,0 +1,23 @@
+{% comment %} MAIN NAV {% endcomment %}
+<nav class="nav-main show-for-large grid-container float-right">
+    <ul class="dropdown menu" data-dropdown-menu>
+        {% for item in include.menu %}
+            <li class="{% if item.children %}is-dropdown-submenu-parent{% endif %}">
+                <a href="{{ item.url }}" {% if item.url == page.url %}class="active"{% endif %}>
+                    {{ item.title }}
+                </a>
+
+                {% comment %} Child Menu Items {% endcomment %}
+                {% if item.children %}
+                    <ul class="menu">
+                        {% for child in item.children %}
+                            <li>
+                                <a href="{{ child.url }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
