@@ -8,19 +8,34 @@
     position: relative;
 
     img{
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        background-color: $dark-gray;
         padding: 0.4rem;
     }
 }
 
+.header-navigation{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .header a{
     color: $white;
-
+    
     &:hover{
         color: $primary-color;
     }
+    
+    &.text-primary {
+        color: $primary-color;
+
+        &:hover {
+            &.text-primary{
+                color: $white;
+            }
+        }
+    }
+}
+
+.prenav {
+    // Additional .9375rem for foundation gutter on links below
+    padding-right: 1.9375rem;
 }

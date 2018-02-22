@@ -54,7 +54,23 @@ svg.icon {
   fill: currentColor; // Applies current font color to fill.
 }
 
-.section-padding{
+.section-padding {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.button.white {
+  color: $black;
+  border-color: $white;
+  transition: color 0.2s, border-color 0.2s;
+
+  &.hollow, &.hollow a{
+    color: $white;
+    background: transparent;
+  }
+
+  &:hover, &:hover a {
+    color: $primary-color;
+    border-color: $primary-color;
+  }
 }

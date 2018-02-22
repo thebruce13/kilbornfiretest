@@ -6,7 +6,7 @@
 
     <body>
         {% comment %} SVG SPRITE {% endcomment %}
-        <div class="hide">{% include svg/svg.svg %}</div>
+        <div class="hide">{% include svg/_svg.svg %}</div>
 
         <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
             {% include navigation/nav-off-canvas.html menu=site.menus.header %}
@@ -28,10 +28,17 @@
             <div class="grid-container">
                 <div class="grid-x">
                     <div class="medium-3 cell header-logo show-for-large">
-                        <img src="{{ site.logo }}" alt="Kilbourn Fire Dept. Logo">
+                        <a href="{{ site.url }}">
+                            <img src="{% image 130x115 {{ site.logo }} %}" alt="Kilbourn Fire Dept. Logo">
+                        </a>
                     </div>
-                    <div class="medium-9 cell text-upper">
-                        {% include navigation/nav-main.html menu=site.menus.header %}
+                    <div class="medium-9 cell text-upper header-navigation show-for-large">
+                        <div class="text-right prenav">
+                            <a class="text-primary" href="tel:{{ site.data.contact.phone | replace: '-', '' }}">{{ site.data.contact.phone }}</a>
+                        </div>
+                        <div class="text-right">
+                            {% include navigation/nav-main.html menu=site.menus.header %}
+                        </div>
                     </div>
                 </div>
             </div>

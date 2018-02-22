@@ -1,15 +1,15 @@
 ---
 # Address, email, phone, and social links for contact information.
 Address:
-  street: ''
-  city: ''
-  state: ''
-  zip: ''
-phone: ''
+  street: P.O. Box 689 712 Oak St
+  city: Wisconsin Dells
+  state: WI
+  zip: 53965
+phone: 608-254-2040
 email: ''
 Social Media:
-  facebook: ''
-  twitter: ''
+  facebook: http://www.facebook.com
+  twitter: htp://www.twitter.com
   yelp: ''
   youtube: ''
   vimeo: ''

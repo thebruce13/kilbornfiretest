@@ -6,4 +6,5 @@ group :jekyll_plugins do
     gem 'jekyll-sitemap', '~> 1.1'
     gem 'image_optim'
     gem 'image_optim_pack', '~> 0.5.0'
+    # gem 'jekyll-paginate-v2', '~> 1.9', '>= 1.9.4'
 end

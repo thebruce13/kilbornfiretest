@@ -1,18 +1,38 @@
 .companies-wrapper{
-    svg{
+    svg {
         width:220px;
         height: 250px;
-        fill: $white;
+        fill: $white !important;
     }
 }
 
-.prevention-featured{
-    margin: 1rem 0;
+.company-icon{
+    max-width: 280px;
+    height: 168px;
+    margin: 0 auto 1rem;
+}
+
+.prevention-featured {
+    margin: 2rem 0;
     padding: 1rem;
     border: 2px solid $white;
 }
 
 
 .iso-raiting-wrapper {
-    background: $dark-gray url('../../img/iso-bg.jpg');
+    background-color: $dark-gray;
+    box-shadow: inset 0 0 75px rgba($black, 0.8);
+
+    &.lazyloaded{
+        background: $dark-gray url('../../img/iso-bg.jpg') scroll center center;
+        background-size: cover;
+    }
+}
+
+.prevention-content{
+    margin-top: 1rem;
+
+    @include breakpoint(large){
+        margin-top: 0;
+    }
 }

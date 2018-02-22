@@ -76,7 +76,7 @@ $foundation-palette: (
         alert: #cc4b37,
 );
 $light-gray: #e6e6e6;
-$medium-gray: #cacaca;
+$medium-gray: #363636;
 $dark-gray: #1b1b1b;
 $black: #121212;
 $white: #fefefe;
@@ -135,7 +135,7 @@ $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
-$header-lineheight: 1.4;
+$header-lineheight: 1;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
         small: (
@@ -279,7 +279,7 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // ----------
 
 $button-font-family: inherit;
-$button-padding: 0.85em 1em;
+$button-padding: 0.85em 1.5em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
@@ -287,7 +287,7 @@ $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
-$button-hollow-border-width: 1px;
+$button-hollow-border-width: 2px;
 $button-sizes: (
         tiny: 0.6rem,
         small: 0.75rem,
@@ -421,7 +421,7 @@ $input-prefix-color: $black;
 $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;
 $input-prefix-padding: 1rem;
-$form-label-color: $black;
+$form-label-color: $white;
 $form-label-font-size: rem-calc(14);
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;
@@ -500,7 +500,7 @@ $offcanvas-sizes: (
 $offcanvas-vertical-sizes: (
   small: 250px,
 );
-$offcanvas-background: $light-gray;
+$offcanvas-background: $dark-gray;
 $offcanvas-shadow: 0 0 10px rgba($black, 0.7);
 $offcanvas-inner-shadow-size: 20px;
 $offcanvas-inner-shadow-color: rgba($black, 0.25);

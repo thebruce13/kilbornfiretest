@@ -1,7 +1,7 @@
 ---
 layout: contact
 title: Contact & Location
-slider: _slideshows/subpage.md
+slider: _slideshows/main.md
 menu:
     header:
         identifier: contact

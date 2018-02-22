@@ -1,14 +1,16 @@
 <ul class="no-bullet">
     {% for item in site.data.contact['Social Media'] %}
-    {% assign social_site = item[0] %} 
-    {% assign social_url = item[1] %}
-    {% if social_url != "" %}
-    <li class="icon-social">
-        <a href="{{ social_url }}" title="{{ social_site }}">
-            <svg class="icon icon-{{ social_url }}">
-                <use xlink:href="#{{ social_site }}"></use>
-            </svg>
-        </a>
-    </li>
-    {% endif %} {% endfor %}
+        {% assign social_site = item[0] %} 
+        {% assign social_url = item[1] %}
+        {% if social_url != "" %}
+        <li class="icon-social">
+            <a href="{{ social_url }}" title="{{ social_site }}">
+                <span class="show-for-sr">{{ social_site }}</span>
+                <svg class="icon icon-{{ social_url }}">
+                    <use xlink:href="#{{ social_site }}"></use>
+                </svg>
+            </a>
+        </li>
+        {% endif %} 
+    {% endfor %}
 </ul>

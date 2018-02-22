@@ -1,6 +1,6 @@
 {% comment %} MOBILE NAV {% endcomment %}
 <nav class="nav-main" role="navigation">
-    <ul class="vertical menu">
+    <ul class="vertical menu text-upper rajdhani">
         {% for item in include.menu %}
             <li>
                 <a href="{{ item.url }}" {% if item.url == page.url %}class="active"{% endif %}>

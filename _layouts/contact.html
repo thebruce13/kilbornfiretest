@@ -1,50 +1,56 @@
 ---
 layout: default
 ---
-<div class="grid-container">
-    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-        <section>
-            <h1>{{ page.title }}</h1>
+<article>
+    <section class="section-padding background-dark-gray">
+        <div class="grid-container">
+            <h1 class="text-upper rajdhani">{{ page.title }}</h1>
+            <h2 class="h3 subtitle text-upper text-primary"><i>{{ page.subtitle }}</i></h2>
             <div>
                 {{ content }}
             </div>
-        </section>
-    </article>
-</div>
-
-<div class="grid-container">
-    {% comment %} ENFORMED CONTACT FORM {% endcomment %}
-    <form method="POST" action="https://www.enformed.io/e9uuwcns" class="grid-x grid-margin-x">
-        <label class="medium-6 cell">
-            First Name
-            <input type="text" name="first">
-        </label>
-
-        <label class="medium-6 cell">
-            Last Name
-            <input type="text" name="phone">
-        </label>
-
-        <label class="medium-6 cell">
-            Phone
-            <input type="text" name="phone">
-        </label>
-
-        <label class="medium-6 cell">
-            Email
-            <input type="email" name="email">
-        </label>
-
-        <label class="medium-12 cell">
-            Message
-            <textarea name="message"></textarea>
-        </label>
-        <div class="cell">
-            <button type="submit" class="button booking-link">Submit</button>
         </div>
+    </section>
 
-        <input type="hidden" name="*reply" value="email">
-        <input type="hidden" name="*redirect" value="{{ page.url | absolute_url }}#form-submit" />
-        <input type="hidden" name="*subject" value="New Submission from Contact Us" />
-    </form>
-</div>
+    <section class="section-padding background-medium-gray">
+        <div class="grid-container">
+        {% comment %} ENFORMED CONTACT FORM {% endcomment %}
+            <form method="POST" action="https://www.enformed.io/e9uuwcns" class="grid-x grid-margin-x">
+                <label class="medium-6 cell">
+                    First Name
+                    <input type="text" name="first">
+                </label>
+
+                <label class="medium-6 cell">
+                    Last Name
+                    <input type="text" name="phone">
+                </label>
+
+                <label class="medium-6 cell">
+                    Phone
+                    <input type="text" name="phone">
+                </label>
+
+                <label class="medium-6 cell">
+                    Email
+                    <input type="email" name="email">
+                </label>
+
+                <label class="medium-12 cell">
+                    Message
+                    <textarea name="message"></textarea>
+                </label>
+                <div class="cell">
+                   <button type="submit" class="button booking-link">Submit</button>
+                </div>
+
+                <input type="hidden" name="*reply" value="email">
+                <input type="hidden" name="*redirect" value="{{ page.url | absolute_url }}#form-submit" />
+                <input type="hidden" name="*subject" value="New Submission from Contact Us" />
+            </form>
+        </div>
+    </section>
+    <section>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.0481358997013!2d-89.77559498380391!3d43.62635706218293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8807460867f02bc9%3A0x2bd6b853ffa5ca5b!2sKilbourn+Fire+Department!5e0!3m2!1sen!2sus!4v1519321703443" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </section>
+</article>

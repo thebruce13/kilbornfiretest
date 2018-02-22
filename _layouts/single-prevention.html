@@ -1,0 +1,34 @@
+---
+layout: default
+title: Fire Prevention
+---
+<article>
+    <section class="section-padding background-dark-gray">
+        <div class="grid-container">
+            <h1 class="text-upper rajdhani">{{ layout.title }}</h1>
+            <h2 class="h3 subtitle text-upper text-primary"><i>{{ page.title }}</i></h2>
+            <div>
+                {{ content }}
+            </div>
+        </div>
+    </section>
+    <section class="section-padding background-medium-gray">
+        <div class="grid-container">
+            {% if page.previous %}
+                {% assign post = page.previous %}
+                {% include preview.html %}
+            {% endif %}
+
+            {% if page.next %}
+                {% assign post = page.next %}
+                {% include preview.html %}
+            {% endif %}
+            
+            {% if page.previous or page.next %}
+                <div class="text-center">
+                    <div class="button hollow large text-upper rajdhani white thick"><b><a href="{{ '/prevention/' | relative_url }}">View More</a></b></div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+</article>

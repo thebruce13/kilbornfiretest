@@ -9,6 +9,9 @@ layout: default
             <div>
                 {{ content }}
             </div>
+            {% for post in site.prevention %}
+                {% include preview.html %}
+            {% endfor %}
         </div>
     </section>
 </article>

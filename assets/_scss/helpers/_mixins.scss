@@ -9,6 +9,8 @@
 
 // Helper mixin to assign the Open Sans font when webfonts are loaded.
 @mixin opensans() {
+  font-family: $body-font-family;
+
   .wf-active &,
   .mce-content-body & {
     font-family: 'Open Sans', $body-font-family;

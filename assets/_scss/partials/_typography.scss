@@ -5,6 +5,12 @@ body {
   @include opensans;
 }
 
+.subtitle {
+  @include opensans;
+  font-style: italic;
+  font-weight: 400;
+}
+
 a {
   transition: color .2s ease;
 }
@@ -21,12 +27,20 @@ a {
   color: $secondary-color;
 }
 
-.heading {
-  @include rajdhani;
+.text-white {
+  color: $white;
 }
 
 .background-dark-gray {
     background-color: $dark-gray;
+}
+
+.background-medium-gray {
+  background-color: $medium-gray;
+}
+
+.opensans{
+  @include opensans;
 }
 
 .rajdhani{

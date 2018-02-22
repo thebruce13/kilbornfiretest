@@ -38,7 +38,7 @@
                 {% for image in slider.slides %}
                     {% if forLoop.first %}
                         <li class="is-active orbit-slide {{ classes }}" style="background-image: url({% image {{ slider_size }} {{ image }} %}); background-size: cover; background-position: center, center;">
-                            <noscript><img src="{% image {{ slider_size }} {{ image }} %}"></noscript>
+                            <noscript><img src="{% image {{ slider_size }} {{ image }} %}" alt=""></noscript>
                     {% else %}
                         <li class="orbit-slide {{ classes }}">   
                     {% endif %}
@@ -46,7 +46,7 @@
                             - To get height ratio right: height = slider height( max slider height new slider height
                             - ToDo: Set this up to have src-set 
                         {% endcomment %}
-                        <img class="lazyload blur-up" data-src="{% image {{ slider_size }} {{ image }} %}"> 
+                        <img class="lazyload blur-up" data-src="{% image {{ slider_size }} {{ image }} %}" alt=""> 
                     </li>
                 {% endfor %}
             </ul>

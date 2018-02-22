@@ -2,60 +2,53 @@
 layout: default 
 ---
 <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-    <div class="background-dark-gray section-padding">
-        <section class="grid-container">
-            <h1 class="text-upper">{{ page.title }}</h1>
-            <h2 class="text-primary text-upper">{{ page.subtitle }}</h2>
+    <!-- MAIN CONTENT -->
+    <section class="background-dark-gray section-padding">
+        <div class="grid-container">
+            <h1 class="text-upper rajdhani">{{ page.title }}</h1>
+            <h2 class="h3 subtitle text-upper text-primary"><i>{{ page.subtitle }}</i></h2>
             <div>
                 {{ content }}
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+    <!-- COMPANY DIVISONS -->
     <section class="companies-wrapper section-padding">
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
-                {% for i in page.companies %}
+                {% for i in site.data.officers.companies %}
                 <div class="medium-4 cell text-center">
-                        <!--<svg class="icon-{{ i[1].icon }}">
-                            <use xlink:href="#{{ i[1].icon }}"></use>
-                        </svg>-->
-                        <img src="{{site.url}}/img/{{ i[1].icon }}.png">
-                    <h3 class="rajdhani text-upper text-primary">{{ i[1].title }}</h3>
-                    <p>{{ i[1].description }}</p>
+                    <div class="company-icon">
+                        <img src="{% image 218x0 {{ i[1].icon }} %}" class="lazyload" alt=""> 
+                    </div>
+                    <div class="company-content">
+                        <h3 class="rajdhani text-upper text-primary">{{ i[1].title }}</h3>
+                        <div class="subtitle text-upper h5"><i>{{ i[1].expertise }}</i></div>
+                        <p>{{ i[1].description }}</p>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </section>
     <!-- ISO RATING -->
-    <section class="section-padding iso-raiting-wrapper">
+    <section class="section-padding iso-raiting-wrapper lazyload">
         <div class="grid-container">
-            <h2 class="text-upper">{{ page.isoraiting.title }}</h2>
-            <h3 class="text-upper text-primary" style="font-weight:400"><i>{{ page.isoraiting.subtitle }}</i></h3>
+            <h2 class="text-upper rajdhani">{{ page.isoraiting.title }}</h2>
+            <h3 class="text-upper text-primary subtitle">{{ page.isoraiting.subtitle }}</h3>
             <p>{{ page.isoraiting.content }}</p>
         </div>
     </section>
+    <!-- PREVENTION ARTICLES -->
     <section class="background-dark-gray section-padding">
         <div class="grid-container">
             {% assign preventions = site.prevention | sort: "featured" %}
             {% for post in preventions %}
-            <div class="grid-x prevention-featured">
-                <div class="medium-4 cell">
-                    <img src="{% image thumbnail {{ post.image }} %}" alt="">
-                </div>
-                <div class="medium-8 cell">
-                    <h3 class="rajdhani text-upper">{{post.title}}</h3>
-                
-                  {% assign content_words = post.content | number_of_words %}
-                  {% assign excerpt_words = post.content | truncatewords: 75 | number_of_words %}
-                                    
-                  {{ post.content | truncatewords: 75 }}
-                  {% if content_words != excerpt_words %}
-                    <a href="{{site.baseurl}}{{ post.url }}">Read more</a>
-                  {% endif %}
-                </div>
-            </div>
+                {% include preview.html %}
             {% endfor %}
+            <div class="text-center">
+                <div class="button hollow large text-upper rajdhani white thick"><b><a href="{{ '/prevention/' | relative_url }}">View More</a></b></div>
+            </div>
         </div>
     </section>
 </article>

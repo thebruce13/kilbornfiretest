@@ -9,6 +9,10 @@ layout: default
             <div>
                 {{ content }}
             </div>
+            {% assign events = site.data.current-events.events | sort: 'start-date' %}
+            {% for post in events %}
+                {% include preview.html  %}
+            {% endfor %}
         </div>
     </section>
 </article>

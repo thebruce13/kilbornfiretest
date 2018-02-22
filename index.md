@@ -3,19 +3,6 @@ layout: index
 title: Kilbourn Volunteer Fire Department 
 subtitle: City of Wisconsin Dells Volunteer Fire department
 slider: _slideshows/main.md
-companies:
-    company1:
-        title: Company 1
-        icon: building
-        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-    company2:
-        title: Company 2
-        icon: house
-        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Ut enim ad minim veniam, quis nostrud exercitation. Labore et dolore magna aliqua.
-    company3:
-        title: Company 3
-        icon: ambulance
-        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
 isoraiting: 
     title: I.S.O. 4 Rating
     subtitle: And what this means for you

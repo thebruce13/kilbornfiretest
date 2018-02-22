@@ -1,0 +1,19 @@
+<div class="grid-x grid-margin-x prevention-featured">
+    <div class="medium-6 large-4 cell text-center large-text-left">
+        <img src="{% image thumbnail {{ post.image }} %}" alt="" class="lazyload">
+    </div>
+    <div class="medium-6 large-8 cell prevention-content">
+        <h3 class="rajdhani text-upper">{{post.title}}</h3>
+
+        {% assign content_words = post.content | number_of_words %}
+        {% assign excerpt_words = post.content | truncatewords: 50 | number_of_words %}
+                        
+        {{ post.content | truncatewords: 50 }}
+        {% if content_words != excerpt_words %}
+        <br>
+        <a class="text-upper rajdhani" href="{{ post.url | relative_url }}">
+            <b>Read&nbsp;more&nbsp;&nbsp;<span style="font-size:1.5em">&raquo;</span></b>
+        </a>
+        {% endif %}
+    </div>
+</div>
