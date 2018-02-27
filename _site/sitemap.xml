@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://kilbourn.test/event/2018-KFD-Harley-Davidson-Raffel/</loc>
+<lastmod>2018-02-27T13:37:14-06:00</lastmod>
+</url>
+<url>
+<loc>http://kilbourn.test/event/Fire-Prevention-Week/</loc>
+<lastmod>2018-02-27T13:37:14-06:00</lastmod>
+</url>
+<url>
+<loc>http://kilbourn.test/event/Wo-Zah-Wa-Fall-Festival/</loc>
+<lastmod>2018-02-27T13:37:14-06:00</lastmod>
+</url>
+<url>
 <loc>http://kilbourn.test/prevention/car-saftey/</loc>
-<lastmod>2018-02-22T16:16:14-06:00</lastmod>
+<lastmod>2018-02-27T13:37:14-06:00</lastmod>
 </url>
 <url>
 <loc>http://kilbourn.test/prevention/carbon-monoxide-smoke-alarms/</loc>
-<lastmod>2018-02-22T16:16:14-06:00</lastmod>
+<lastmod>2018-02-27T13:37:14-06:00</lastmod>
 </url>
 <url>
 <loc>http://kilbourn.test/prevention/wisconsin-dells-burning-permits/</loc>
-<lastmod>2018-02-22T16:16:14-06:00</lastmod>
+<lastmod>2018-02-27T13:37:14-06:00</lastmod>
 </url>
 <url>
 <loc>http://kilbourn.test/contact/</loc>
@@ -20,6 +32,9 @@
 </url>
 <url>
 <loc>http://kilbourn.test/</loc>
+</url>
+<url>
+<loc>http://kilbourn.test/opportunities/</loc>
 </url>
 <url>
 <loc>http://kilbourn.test/prevention/</loc>

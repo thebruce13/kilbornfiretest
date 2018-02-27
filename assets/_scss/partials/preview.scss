@@ -1,0 +1,12 @@
+.preview {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 2px solid $white;
+}
+.preview-content{
+    margin-top: 1rem;
+
+    @include breakpoint(large){
+        margin-top: 0;
+    }
+}

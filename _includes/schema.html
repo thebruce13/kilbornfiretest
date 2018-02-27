@@ -5,7 +5,7 @@
 <script type="application/ld+json">
 	{
 	  "@context": "http://schema.org",
-	  "@type": "LocalBusiness",
+	  "@type": "FireStation",
 	  "name": "{{ site.title }}",
 	  "location": {
 			"@type": "Place",
@@ -29,10 +29,10 @@
 	  "image": "{{ site.url }}/{{ site.logo }}",
 	  "email": "{{ site.data.contact.email }}",
 		"sameAs": [
-			{% for item in site.data.contact['Social Media'] %}
-				{% assign social_url = item[1] %}
-				"{{ social_url }}"{% if forloop.last == false %},{% endif %}
-			{% endfor %}
+			{% assign social_links = site.data.contact['Social Media'] | where_exp: 'item', 'item != ""' %}
+			{%- for item in social_links -%}
+					"{{ item }}"{%- if forloop.last == false -%},{%- endif -%}
+			{%- endfor -%}
 	  ],
 	  "hasMap": "Map Link",
 	  "additionalType": "Optional Additional Type",

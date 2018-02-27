@@ -25,10 +25,15 @@ markdown: kramdown
 
 #Collections
 collections:
- slideshows:
- prevention:
-  output: true
-  permalink: /prevention/:path/
+  slideshows:
+  prevention:
+    output: true
+    permalink: /prevention/:path/
+  events:
+    output: true
+    permalink: /event/:path/
+  officers:
+    output: false
 
 #Plugins
 plugins:
@@ -37,45 +42,25 @@ plugins:
   - mini_magick
   - image_optim
   - image_optim_pack
-  # - jekyll-paginate-v2
 
 #Permalink
 permalink: pretty
-
-# # Pagination Settings
-# pagination:
-#   enabled: true
-#   per_page: 3
-#   permalink: '/:num/'
-#   title: ':title | :num of :max'
-#   limit: 0
-#   sort_field: 'date'
-#   sort_reverse: true
-#  # extension: htm
-#  # indexpage: 'default'
-#   trail: 
-#     before: 2
-#     after: 2
-
-
-# autopages:
-#   enabled: true
-#   collections:
-#     enabled: true
-#     slugify:
-#       mode: 'ascii'
-#       cased: true  # Causes B+W tag to show up as it is written on the terry-pratchet-diary-2017.md page and not lowercase
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
-   - node_modules
-   - gulpfile.js
-   - package.json
-   - package-lock.json
-   - Gemfile
-   - Gemfile.lock
+  - node_modules
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+
+# Keep files as-is no ned to process.
+keep_files: 
+  - generated
+  - img
 
 # Set presets for image-tag plugin
 image:

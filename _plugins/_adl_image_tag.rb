@@ -28,12 +28,9 @@ module Jekyll
       @markup = markup
       super
     end
-
-    # Create the found images global variable to later prevent duplicate 'Found' messages
-    $found_images = Array.new;
-
+    
     def render(context)
-
+      
       # Render any liquid variables in tag arguments and unescape template code
       render_markup = Liquid::Template.parse(@markup).render(context).gsub(/\\\{\\\{|\\\{\\%/, '\{\{' => '{{', '\{\%' => '{%')
 
@@ -96,7 +93,6 @@ module Jekyll
       unless generated_src
         return
       end
-
       generated_src = File.join(site.baseurl, generated_src) unless site.baseurl.empty?
 
 # Lets you return the URL if you
@@ -109,6 +105,7 @@ module Jekyll
       end
     end
 
+    # Generation of Image function.
     def generate_image(instance, site_source, site_dest, image_source, image_dest)
 
       image_source_path = File.join(site_source, image_source, instance[:src])
@@ -116,9 +113,7 @@ module Jekyll
         puts "Missing: #{image_source_path}"
         return false
       end
-
       image = MiniMagick::Image.open(image_source_path)
-      image.coalesce
       digest = Digest::MD5.file image_source_path
       digest = digest.hexdigest.slice!(0..5)
 
@@ -199,6 +194,7 @@ module Jekyll
       # Return path relative to the site root for html
       Pathname.new(File.join('/', image_dest, image_dir, gen_name)).cleanpath
     end
+    # End Generation of Image
   end
 end
 

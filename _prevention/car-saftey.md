@@ -1,7 +1,7 @@
 ---
 layout: single-prevention
 title: Car Safety
-image: /img/shutterstock_525794647.png
+image: /img/placeholder-1.png
 slider: _slideshows/main.md
 featured: 3
 ---

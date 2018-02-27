@@ -1,7 +1,7 @@
 ---
 layout: single-prevention
 title: Wiscnosin Dells Burning Permits
-image: /img/shutterstock_525794647.png
+image: /img/placeholder-1.png
 slider: _slideshows/main.md
 featured: 2
 ---

@@ -1,0 +1,79 @@
+---
+layout: default
+---
+<article>
+    <section class="section-padding background-dark-gray">
+        <div class="grid-container">
+            <h1 class="text-upper rajdhani">{{ page.title }}</h1>
+            <h2 class="h3 subtitle text-upper text-primary"><i>{{ page.subtitle }}</i></h2>
+            <div>
+                {{ content }}
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding background-medium-gray">
+        <div class="grid-container">
+        {% comment %} ENFORMED CONTACT FORM {% endcomment %}
+            <form action="https://formspree.io/maobwjpm" method="POST" class="grid-x grid-margin-x">
+                <input type="text" name="_gotcha" style="display: none"> 
+                <label class="medium-6 cell">
+                    First Name
+                    <input type="text" name="first">
+                </label>
+
+                <label class="medium-6 cell">
+                    Last Name
+                    <input type="text" name="last">
+                </label>
+
+                <label class="medium-6 cell">
+                    Phone
+                    <input type="text" name="phone">
+                </label>
+
+                <label class="medium-6 cell">
+                    Email
+                    <input type="email" name="email">
+                </label>
+
+                <label class="medium-6 cell">
+                    Address
+                    <input type="text" name="address">
+                </label>
+
+                <label class="medium-6 cell">
+                    Address 2 (Apt, Room, etc..)
+                    <input type="text" name="address_2">
+                </label>
+
+                <label class="medium-4 cell">
+                    City
+                    <input type="text" name="city">
+                </label>
+
+                <label class="medium-4 cell">
+                    State
+                    <input type="text" name="state">
+                </label>
+
+                <label class="medium-4 cell">
+                    Zip Code
+                    <input type="text" name="zip">
+                </label>
+
+                <label class="medium-12 cell">
+                    Message
+                    <textarea name="message"></textarea>
+                </label>
+                <div class="cell">
+                   <button type="submit" class="button booking-link">Submit</button>
+                </div>
+
+                <input type="hidden" name="*reply" value="email">
+                <input type="hidden" name="*redirect" value="{{ page.url | absolute_url }}#form-submit" />
+                <input type="hidden" name="*subject" value="New Submission from Contact Us" />
+            </form>
+        </div>
+    </section>
+</article>

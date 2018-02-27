@@ -1,14 +1,21 @@
-<div class="grid-x grid-margin-x prevention-featured">
+<div class="grid-x grid-margin-x preview">
     <div class="medium-6 large-4 cell text-center large-text-left">
         <img src="{% image thumbnail {{ post.image }} %}" alt="" class="lazyload">
     </div>
-    <div class="medium-6 large-8 cell prevention-content">
+    <div class="medium-6 large-8 cell preview-content">
         <h3 class="rajdhani text-upper">{{post.title}}</h3>
-
+        {% if post.start_date %}
+        <span class="primary-color">
+            <svg class="icon icon-clock-o">
+                <use xlink:href="#clock-o"></use>
+            </svg>
+            {{ post.start_date | date: "%D" }} {% if post.end_date %} - {{ post.end_date | date: "%D" }}{% endif %}
+        </span>
+        {% endif %}
         {% assign content_words = post.content | number_of_words %}
-        {% assign excerpt_words = post.content | truncatewords: 50 | number_of_words %}
+        {% assign excerpt_words = post.content | truncatewords: 45 | number_of_words %}
                         
-        {{ post.content | truncatewords: 50 }}
+        {{ post.content | truncatewords: 45 }}
         {% if content_words != excerpt_words %}
         <br>
         <a class="text-upper rajdhani" href="{{ post.url | relative_url }}">

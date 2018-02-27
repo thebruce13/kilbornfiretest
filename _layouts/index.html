@@ -16,17 +16,19 @@ layout: default
     <section class="companies-wrapper section-padding">
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
-                {% for i in site.data.officers.companies %}
-                <div class="medium-4 cell text-center">
-                    <div class="company-icon">
-                        <img src="{% image 218x0 {{ i[1].icon }} %}" class="lazyload" alt=""> 
-                    </div>
-                    <div class="company-content">
-                        <h3 class="rajdhani text-upper text-primary">{{ i[1].title }}</h3>
-                        <div class="subtitle text-upper h5"><i>{{ i[1].expertise }}</i></div>
-                        <p>{{ i[1].description }}</p>
-                    </div>
-                </div>
+                {% comment %} Grab all the posts that have the title that contains 'Company' for displaying on the front page {% endcomment %}
+                {% assign companies = page.companies %}
+                {% for post in companies %}
+                        <div class="medium-4 cell text-center">
+                            <div class="company-icon">
+                            {% if post[1].icon %} <img src="{% image 218x0 {{ post[1].icon }} %}" class="lazyload" alt=""> {% endif %}
+                            </div>
+                            <div class="company-content">
+                                <h3 class="rajdhani text-upper text-primary">{{ post[1].title }}</h3>
+                                <div class="subtitle text-upper h5"><i>{{ post[1].expertise }}</i></div>
+                                <p>{{ post[1].content }}</p>
+                            </div>
+                        </div>
                 {% endfor %}
             </div>
         </div>
