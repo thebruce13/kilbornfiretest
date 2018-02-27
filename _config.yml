@@ -32,8 +32,6 @@ collections:
   events:
     output: true
     permalink: /event/:path/
-  officers:
-    output: false
 
 #Plugins
 plugins:
